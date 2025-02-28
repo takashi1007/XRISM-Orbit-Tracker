@@ -127,11 +127,11 @@ class Window(QDialog):
         self.figure.clear()
         ax = self.figure.add_subplot(1,1,1, projection=ccrs.PlateCarree())
         start_time = ephem.now() + ephem.minute*value
-        updateTime = (dt.datetime.utcnow()+dt.timedelta(minutes=value)).strftime('%Y/%m/%d %H:%M')
+        updateTime = (dt.datetime.now(dt.UTC)+dt.timedelta(minutes=value)).strftime('%Y/%m/%d %H:%M')
         ax.coastlines()
         ax.set_title(f'XRISM Resolve events/orbit {updateTime} (UT)', fontsize=25)
         ax.set_global()
-        ax.add_feature(Nightshade(dt.datetime.utcnow(), alpha=0.2))
+        ax.add_feature(Nightshade(dt.datetime.now(dt.UTC), alpha=0.2))
 
 	# add USC at 31.2513N, 131.0761E from Google
         ax.plot(131.0761, 31.2513, color='g', mew=2, marker='+', markersize=15, transform=ccrs.PlateCarree())

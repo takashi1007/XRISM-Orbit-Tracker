@@ -1,5 +1,7 @@
 # XRISM-Orbit-Tracker
 
+*** This program is tested only on macOS ***
+
 This is a Python script to show the current location of the XRISM satellite.
 
 Simply run the script;
